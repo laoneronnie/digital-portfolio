@@ -499,6 +499,7 @@ strong {
 
 /* =========================================================
    06. HOME PAGE HERO AND PROFILE
+   UPDATED: SMALLER HOMEPAGE PROFILE PHOTO
 ========================================================= */
 
 .home-hero {
@@ -531,9 +532,9 @@ strong {
 
 .home-hero-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    grid-template-columns: minmax(0, 1.15fr) minmax(250px, 0.85fr);
     align-items: center;
-    gap: 70px;
+    gap: 60px;
 }
 
 .home-hero-copy {
@@ -561,32 +562,37 @@ strong {
     margin-top: 30px;
 }
 
+/* Smaller frame on desktop and laptop screens */
 .home-hero-image {
     position: relative;
-    width: min(100%, 410px);
+    width: min(100%, 320px);
     margin-inline: auto;
-    padding: 12px;
+    padding: 10px;
     border: 1px solid rgba(201, 162, 39, 0.55);
-    border-radius: 180px 180px 18px 18px;
+    border-radius: 150px 150px 16px 16px;
 }
 
+/* Decorative red outline behind the photograph */
 .home-hero-image::before {
     content: "";
     position: absolute;
     z-index: 0;
-    inset: 22px -14px -14px 22px;
+    inset: 20px -12px -12px 20px;
     border: 1px solid rgba(217, 39, 50, 0.7);
     border-radius: inherit;
 }
 
+/* Keep the photograph inside the smaller frame */
 .home-hero-image img,
 .home-hero-image .profile-placeholder {
     position: relative;
     z-index: 1;
+    display: block;
     width: 100%;
     aspect-ratio: 4 / 5;
+    max-height: 400px;
     object-fit: cover;
-    border-radius: 170px 170px 12px 12px;
+    border-radius: 140px 140px 10px 10px;
     background: #292929;
 }
 
@@ -2068,15 +2074,16 @@ blockquote,
 
     .home-hero-grid {
         grid-template-columns: 1fr;
-        gap: 45px;
+        gap: 38px;
     }
 
     .home-hero-copy h1 {
         font-size: clamp(2.75rem, 12vw, 4.2rem);
     }
 
+    /* Smaller photograph on phones */
     .home-hero-image {
-        width: min(82%, 350px);
+        width: min(78%, 290px);
     }
 
     .intro-grid,
@@ -2240,6 +2247,10 @@ blockquote,
 
     .home-hero-copy h1 {
         font-size: 2.55rem;
+    }
+
+    .home-hero-image {
+        width: min(75%, 260px);
     }
 
     .eyebrow {
